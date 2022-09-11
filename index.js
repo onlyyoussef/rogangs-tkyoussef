@@ -1,15 +1,14 @@
 
-const express = require('express');
-const chalk = require('chalk')
-const app = express();
 const fs = require('fs')
-app.get('/', (req, res) => {
-  res.send('Hello Express app!')
-});
+const express = require('express')
+const chalk = require('chalk')
+const app = express()
 
-app.listen(5000, () => {
-  console.log('server started');
-});
+app.get('/', async (req, res) => {
+res.send('All  Copyright go to OnlyYoussef')
+})
+
+app.listen(process.env.PORT || 3000, () => console.log(chalk.magenta.bold('Launched Sucessfully')))
 var http = require("http");
 setInterval(function() {
     http.get("https://rogangs.herokuapp.com/");
