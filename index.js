@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log('server started');
 });
+var http = require("http");
+setInterval(function() {
+    http.get("https://rogangs.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
 const { Discord, MessageEmbed , MessageSelectMenu, MessageButton, Intents, Client, MessageCollector , Collection, MessageActionRow} = require('discord.js')
 const { QuickDB } = require('quick.db')
 const db = new QuickDB()
@@ -20,7 +24,7 @@ dotenv.config();
 client.setMaxListeners(0)
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const clientId = process.env.ID_BOT
+const clientId = "867845182695014411"
 const config = require('./config.json')
 const token2 = "ODY3ODQ1MTgyNjk1MDE0NDEx.GrRuOp.dCioqqak4-5Y8vetzIiil3N3-beGtMP3S2HCY8"
 const prefix = config.prefix;
