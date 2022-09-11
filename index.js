@@ -14,7 +14,7 @@ const { Discord, MessageEmbed , MessageSelectMenu, MessageButton, Intents, Clien
 const { QuickDB } = require('quick.db')
 const db = new QuickDB()
 const client = new Client({intents: 3276799})
-client.login(process.env.TOKEN)
+client.login("ODY3ODQ1MTgyNjk1MDE0NDEx.GrRuOp.dCioqqak4-5Y8vetzIiil3N3-beGtMP3S2HCY8")
 const dotenv = require('dotenv');
 dotenv.config();
 client.setMaxListeners(0)
@@ -22,7 +22,7 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const clientId = process.env.ID_BOT
 const config = require('./config.json')
-const token2 = process.env.TOKEN
+const token2 = "ODY3ODQ1MTgyNjk1MDE0NDEx.GrRuOp.dCioqqak4-5Y8vetzIiil3N3-beGtMP3S2HCY8"
 const prefix = config.prefix;
 client.commands = new Collection();
 const data = ["1012365910847266966", "1012371759007289385"]
