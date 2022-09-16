@@ -1739,3 +1739,20 @@ client.on(`messageCreate`, msg => {
     })
   }
 })
+const probot = require('probot-tax')
+client.on('messageCreate', async msg => {
+  if(msg.content.startsWith(prefix + "tax")){
+    let args = msg.content.split(' ').slice(1).join(' ')
+    let args2 = args.replace('k', '000').replace('K', '000').replace('m', '000000').replace('M', '000000')
+    if(!args)return msg.reply({content: `يلا الكيلو الطماطم ب عشره جنيه يلا اشترو اشترو . ما تجيب ياعم ام رقم`})
+    if(args == "1")return msg.reply({content: `مفروض بقا اني احاول احسب لك ضريبه صح ؟`})
+    let embed = new MessageEmbed()
+    .setColor("WHITE")
+    .setTitle('Finall Tax:')
+    .setDescription(`
+    مبلغ بدون الضريبه : ${args}
+    مبلغ مع الضريبه : ${probot.taxs(args2)}
+    `)
+    msg.reply({embeds: [embed]})
+  }
+})
